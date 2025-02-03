@@ -26,14 +26,16 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Dependencies
-        run: sudo apt install -y texlive-full
+        run: |
+          sudo apt update
+          sudo apt install -y --fix-missing texlive-full
 
       - name: Cache Isabelle
         id: cache-tar
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: Isabelle_linux.tar.gz
           key: ${{env.isabelle-tar}}
@@ -53,7 +55,7 @@ jobs:
         run: isabelle build -d . Igloo
 
       - name: Upload Documents
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: documents
           path: generated/*.pdf
