@@ -94,7 +94,7 @@ lemma dom_runs_obtain_resp_run_state:
   assumes "R \<in> dom runz" obtains agts store ib ob ad where 
     "runz R = Some \<lparr> agts = agts, store = store, ibuf = ib, obuf = ob, addrA = ad \<rparr>"
   using assms
-  by (metis (mono_tags, hide_lams) domIff init_run_state.surjective not_None_eq 
+  by (metis (mono_tags, opaque_lifting) domIff init_run_state.surjective not_None_eq 
       resp_run_state.ext_surjective run_state.cases run_state.ext_inject)
 
 lemmas dom_runs_obtain_run_state = dom_runs_obtain_init_run_state dom_runs_obtain_resp_run_state
@@ -140,7 +140,7 @@ where
      \<comment> \<open>actions\<close>
      u1 = (
        CIK u,
-       init_runs u(Ra \<mapsto> \<lparr> agts = [A, B], store = [], ibuf = {}, obuf = None \<rparr>),
+       (init_runs u)(Ra \<mapsto> \<lparr> agts = [A, B], store = [], ibuf = {}, obuf = None \<rparr>),
        resp_runs u
      )"
 
@@ -156,7 +156,7 @@ where
      \<comment> \<open>actions\<close>
      u1 = (
        CIK u,
-       init_runs u(Ra \<mapsto> the (init_runs u Ra)\<lparr> 
+       (init_runs u)(Ra \<mapsto> the (init_runs u Ra)\<lparr> 
          obuf := Some bs 
        \<rparr>),
        resp_runs u
@@ -176,7 +176,7 @@ where
      \<comment> \<open>actions\<close>
      u1 = (
        CIK u,
-       init_runs u(Ra \<mapsto> the (init_runs u Ra)\<lparr> store := [aNon Nb], obuf := None \<rparr>), 
+       (init_runs u)(Ra \<mapsto> the (init_runs u Ra)\<lparr> store := [aNon Nb], obuf := None \<rparr>), 
        resp_runs u
      )"
 
@@ -200,7 +200,7 @@ where
      u1 = (
        CIK u,
        init_runs u,
-       resp_runs u(Rb \<mapsto> \<lparr> agts = [B], store = [], ibuf = {}, obuf = None, addrA = None \<rparr>)
+       (resp_runs u)(Rb \<mapsto> \<lparr> agts = [B], store = [], ibuf = {}, obuf = None, addrA = None \<rparr>)
      )"
 
 definition
@@ -218,7 +218,7 @@ where
      u1 = (
        CIK u,
        init_runs u,
-       resp_runs u(Rb \<mapsto> the (resp_runs u Rb)\<lparr> 
+       (resp_runs u)(Rb \<mapsto> the (resp_runs u Rb)\<lparr> 
          agts := [B, A], store := [aNon Na], obuf := None, addrA := Some ad
        \<rparr>) 
      )
@@ -241,7 +241,7 @@ where
      u1 = (
        CIK u,
        init_runs u,
-       resp_runs u(Rb \<mapsto> the (resp_runs u Rb)\<lparr> 
+       (resp_runs u)(Rb \<mapsto> the (resp_runs u Rb)\<lparr> 
          obuf := Some bs
        \<rparr>)
      )"
@@ -269,7 +269,7 @@ where
      \<comment> \<open>actions\<close>
      u1 = (
        CIK u,
-       init_runs u(Ra \<mapsto> (the (init_runs u Ra))\<lparr> 
+       (init_runs u)(Ra \<mapsto> (the (init_runs u Ra))\<lparr> 
          ibuf := insert (ad, bs) (ibuf (the (init_runs u Ra))) 
        \<rparr>),
        resp_runs u
@@ -310,7 +310,7 @@ where
      u1 = (
        CIK u,
        init_runs u,
-       resp_runs u(Rb \<mapsto> (the (resp_runs u Rb))\<lparr> 
+       (resp_runs u)(Rb \<mapsto> (the (resp_runs u Rb))\<lparr> 
          ibuf := insert (ad, bs) (ibuf (the (resp_runs u Rb))) 
        \<rparr>)
      )"
