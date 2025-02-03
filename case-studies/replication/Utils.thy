@@ -12,7 +12,7 @@ section \<open>Utilities for the Primary Backup Case Study\<close>
 
 theory Utils
   imports
-    "../../Event_Systems" 
+    "Igloo.Event_Systems"
     "HOL-Library.Sublist"
     "HOL-Library.Countable_Set"
 begin

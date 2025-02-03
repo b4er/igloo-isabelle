@@ -25,7 +25,7 @@ section \<open>Abstract Model\<close>
 
 theory Leader_Election_0
   imports 
-    "../../Event_Systems"
+    "Igloo.Event_Systems"
 begin
 
 text \<open>Abstract Model that only specifies the problem and solves it in an artificial way by selecting

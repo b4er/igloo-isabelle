@@ -52,10 +52,12 @@ jobs:
           echo "$(readlink -f -- ./Isabelle*)/bin" >> "$GITHUB_PATH"
 
       - name: Run the Proofs
-        run: isabelle build -d . Igloo
+        run: |
+          isabelle build -d . Igloo
+          isabelle build -d . Igloo_Examples
 
       - name: Upload Documents
         uses: actions/upload-artifact@v4
         with:
           name: documents
-          path: generated/*.pdf
+          path: generated/**/document.pdf

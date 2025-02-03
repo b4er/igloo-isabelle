@@ -14,10 +14,10 @@ section \<open>Refinement 5: Decompositon of Signature-based Protocol Implementa
 theory m5_sig 
   imports 
     m4_sig 
-    "../../Event_Systems_into_IO_Processes"
-    "../../Interleaving"
-    "../../Composition"
-    "../../Decomposition"
+    "Igloo.Event_Systems_into_IO_Processes"
+    "Igloo.Interleaving"
+    "Igloo.Composition"
+    "Igloo.Decomposition"
 begin
 
 text \<open>We decompose the protocol implementation into an environment model and an run-id-indexed 

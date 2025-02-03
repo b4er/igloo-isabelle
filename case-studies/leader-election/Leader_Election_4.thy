@@ -10,9 +10,9 @@ section \<open>IO Specification and Trace Equivalence\<close>
 theory Leader_Election_4
   imports 
     Leader_Election_3
-    "../../Event_Systems_into_IO_Processes"
-    "../../IO_Processes_into_IO_Separation_Logic"
-    "../../IO_Behavior"
+    "Igloo.Event_Systems_into_IO_Processes"
+    "Igloo.IO_Processes_into_IO_Separation_Logic"
+    "Igloo.IO_Behavior"
 begin
 
 declare if_split_asm [split]

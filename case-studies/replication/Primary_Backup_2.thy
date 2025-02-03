@@ -11,11 +11,11 @@ theory Primary_Backup_2
   imports
     "Primary_Backup_1"
     "HOL-Library.Countable_Set"
-    "../../Interleaving"
-    "../../Event_Composition"
-    "../../Composition"
-    "../../Decomposition"
-    "../../Event_Systems_into_IO_Processes"
+    "Igloo.Interleaving"
+    "Igloo.Event_Composition"
+    "Igloo.Composition"
+    "Igloo.Decomposition"
+    "Igloo.Event_Systems_into_IO_Processes"
 begin
 text\<open>In this theory, we decompose the global system into a model m2sys and an environment m2e.
 m2sys is further decomposed into a family of event systems for clients (each event system 

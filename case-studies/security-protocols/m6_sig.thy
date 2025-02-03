@@ -14,9 +14,9 @@ section \<open>Refinement 6: Derivation of the Protocol Roles' I/O Specification
 theory m6_sig
   imports 
     m5_sig
-    "../../Event_Systems_into_IO_Processes"
-    "../../IO_Processes_into_IO_Separation_Logic"
-    "../../IO_Behavior"
+    "Igloo.Event_Systems_into_IO_Processes"
+    "Igloo.IO_Processes_into_IO_Separation_Logic"
+    "Igloo.IO_Behavior"
 begin
 
 text \<open>Set up some useful simplification and congruence rules for simplifying the 

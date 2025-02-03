@@ -13,7 +13,7 @@ section \<open>Non-injective Agreement\<close>
 theory a0n_agree 
   imports 
     Agents Infra (* Refinement *) 
-    "../../../Event_Systems"
+    "Igloo.Event_Systems"
 begin
 
 text \<open>The initial model abstractly specifies entity authentication, where 

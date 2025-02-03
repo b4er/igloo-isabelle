@@ -10,10 +10,10 @@ section \<open>Decomposition\<close>
 theory Leader_Election_3
   imports 
     Leader_Election_2 
-    "../../Interleaving"
-    "../../Composition"
-    "../../Decomposition"
-    "../../Event_Systems_into_IO_Processes"
+    "Igloo.Interleaving"
+    "Igloo.Composition"
+    "Igloo.Decomposition"
+    "Igloo.Event_Systems_into_IO_Processes"
 begin
 
 declare if_split_asm [split]
