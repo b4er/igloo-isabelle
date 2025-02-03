@@ -1,5 +1,7 @@
 # Igloo: End-to-End Verification of Distributed Systems
 
+![Running the Igloo Session on the CI.](https://github.com/b4er/igloo-isabelle/actions/workflows/ci.yaml/badge.svg?branch=main)
+
 Mirror of the Isabelle/HOL source ([original][1]).
 
 The official Project can be found [here][2].

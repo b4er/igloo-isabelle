@@ -201,8 +201,8 @@ proof (coinduction arbitrary: h A rule: sem.coinduct)
       by (auto simp add: Groups.ac_simps intro: exI[of _ "g + h"]) 
   next
     case (sem_Star h1 A1 h2 A2)
-    then show ?thesis 
-      by (auto 0 3 simp add: Groups.ac_simps intro: exI[of _ "g + h1"] exI[of _ "h2"])
+    then show ?thesis
+      by (auto 0 3 simp: add.assoc intro: exI[of _ "g + h1"] exI[of _ "h2"])
   qed auto
 qed
 
